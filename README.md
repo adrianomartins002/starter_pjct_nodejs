@@ -7,6 +7,7 @@ Essas instruções fornecerão uma cópia do projeto em execução na sua máqui
 ## Pré-requisitos:
  - Para executar o projeto é necessário ter instalado o nodejs na versão 12
  - Docker
+ - Imagem do mongo para o docker (colocar na porta 27017)
 
 ## Executando os testes
  - Os testes serão executados usando a biblioteca mocha.

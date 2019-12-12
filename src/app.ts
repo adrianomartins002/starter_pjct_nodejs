@@ -1,5 +1,7 @@
 import express from 'express'
 import cors from 'cors'
+import mongoose from 'mongoose'
+import routes from './routes'
 
 class App {
     public express: express.Application
@@ -8,6 +10,7 @@ class App {
       this.express = express()
       this.middlewares()
       this.routes()
+      this.database()
     }
 
     private middlewares (): void {
@@ -16,8 +19,13 @@ class App {
     }
 
     private routes ():void {
-      this.express.get('/', (req, res) => {
-        return res.send('Hello Word')
+      this.express.use(routes)
+    }
+
+    private database ():void{
+      mongoose.connect('mongodb://localhost:27017/tsnode', {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
       })
     }
 }

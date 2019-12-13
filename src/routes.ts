@@ -1,9 +1,9 @@
 import { Router } from 'express'
-import UserController from './controllers/UserController'
+import DadoController from './controllers/DadoController'
 
 const routes = Router()
 
-routes.get('/users', UserController.index)
-routes.post('/users', UserController.create)
+routes.get('/dado', DadoController.find)
+routes.post('/dado', DadoController.create)
 
 export default routes

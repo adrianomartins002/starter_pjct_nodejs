@@ -1,9 +1,10 @@
 import { Request, Response } from 'express'
 import Dado from '../schemas/Dado'
 
-class UserController {
+class DadoController {
   public async find (req:Request, res:Response):Promise<Response> {
     const dado = await Dado.find()
+    console.log("dado:", dado)
     return res.json(dado)
   }
 
@@ -13,4 +14,4 @@ class UserController {
   }
 }
 
-export default new UserController()
+export default new DadoController()

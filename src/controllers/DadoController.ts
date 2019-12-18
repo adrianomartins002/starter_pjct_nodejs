@@ -8,6 +8,7 @@ class UserController {
   }
 
   public async create (req:Request, res:Response):Promise<Response> {
+    console.log('body:', req.body)
     const dado = await Dado.create(req.body)
     return res.json(dado)
   }

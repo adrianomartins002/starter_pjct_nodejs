@@ -12,6 +12,7 @@ class App {
     }
 
     private routes ():void {
+      this.express.use(express.json())
       this.express.use(routes)
     }
 

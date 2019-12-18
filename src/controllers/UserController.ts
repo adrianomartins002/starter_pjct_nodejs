@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { User } from '../schemas/User'
 import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
-const authConfig = require('../config/auth')
+import authConfig from '../config/auth.json'
 
 class UserController {
   public async index (req: Request, res: Response): Promise<Response> {

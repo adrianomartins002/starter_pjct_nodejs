@@ -44,7 +44,7 @@ class UserController {
     const token = jwt.sign({ id: user.id }, authConfig.secret, {
       expiresIn: 86400
     })
-
+    console.log(token)
     res.send({ user, token })
   }
 }

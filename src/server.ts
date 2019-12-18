@@ -3,6 +3,7 @@ import { applyMiddleware } from './utils'
 import middleware from './middleware'
 import app from './app'
 import errorHandlers from './middleware/errorHandlers'
+import { Auth } from './middleware/auth'
 
 process.on('uncaughtException', e => {
   console.log(e)
@@ -15,6 +16,7 @@ process.on('unhandledRejection', e => {
 })
 
 const router = express()
+router.use(Auth.auth)
 applyMiddleware(middleware, router.use(app))
 applyMiddleware(errorHandlers, router)
 

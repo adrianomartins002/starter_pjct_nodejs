@@ -10,7 +10,6 @@ routes.post('/dado', DadoController.create)
 
 routes.post('/user', UserController.register)
 routes.get('/user', UserController.index)
-
-routes.post('/authenticate', AuthController.autenticacao)
+routes.post('/authenticate', UserController.authenticate)
 
 export default routes

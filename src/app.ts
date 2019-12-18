@@ -3,25 +3,25 @@ import mongoose from 'mongoose'
 import routes from './routes'
 
 class App {
-    public express: express.Application
+  public express: express.Application
 
-    public constructor () {
-      this.express = express()
-      this.routes()
-      this.database()
-    }
+  public constructor () {
+    this.express = express()
+    this.routes()
+    this.database()
+  }
 
-    private routes ():void {
-      this.express.use(express.json())
-      this.express.use(routes)
-    }
+  private routes ():void {
+    this.express.use(express.json())
+    this.express.use(routes)
+  }
 
-    private database ():void{
-      mongoose.connect('mongodb://localhost:27017/mongo_nodejs', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
-    }
+  private database (): void {
+    mongoose.connect('mongodb://localhost:27017/starter_mongo', {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    })
+  }
 }
 
 export default new App().express

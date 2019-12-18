@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import DadoController from './controllers/DadoController'
 import UserController from './controllers/UserController'
-import AuthController from './controllers/AuthController'
 
 const routes = Router()
 

@@ -22,11 +22,11 @@ const UserSchema = new Schema({
   timestamps: true
 })
 
-UserSchema.pre('save', async function (next) {
-  const hash = await bcrypt.hash(this.password, 10)
-  this.password = hash
-  next()
-})
+// UserSchema.pre('save', async function (next) {
+//   const hash = await bcrypt.hash(this.password, 10)
+//   this.password = hash
+//   next()
+// })
 
 UserSchema.methods.fullName = function (): string {
   return (this.firstName.trim() + ' ' + this.lastName.trim())
